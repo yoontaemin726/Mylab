@@ -15,6 +15,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.util.Base64;
+
 public class JoinActivity extends AppCompatActivity {
 
     private DatabaseReference mRootRef;
@@ -36,7 +42,6 @@ public class JoinActivity extends AppCompatActivity {
 
         mRootRef = FirebaseDatabase.getInstance().getReference();
 
-        //condRef2 = mRootRef.child("email");
     }
 
     @Override
@@ -57,6 +62,8 @@ public class JoinActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 Info info = new Info(join_name.getText().toString(),join_email.getText().toString(),
                         join_password.getText().toString());
 

@@ -7,7 +7,6 @@ public class Info {
 
     public Info() {
     }
-
     public Info(String name, String email, String password) {
         this.name = name;
         this.email = email;
